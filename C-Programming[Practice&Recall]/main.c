@@ -1,17 +1,21 @@
-//fibonacci series
+/*
+generating a function to check whether the student is pass or fail on the basis of score
+return "Pass" if score is equal or above 50 otherwise return "Fail"
+*/ 
 
 #include <stdio.h>
+char* is_pass_or_fail(int score);
 int main(void){
-    int limit, swap1 = 0,  swap2 = 1, swap3 = swap1 + swap2;
-    printf("Enter how many first fibonacci series number do you want to get[0 included]:\t");
-    scanf("%d", &limit);
-    printf("\n%d\t%d\t", swap1, swap2);
-    for(int i = 0; i <= limit-3; ++i){
-        swap1 = swap2;
-        swap2 = swap3;
-        printf("%d\t", swap3);
-        swap3 = swap1 + swap2;
-    }
-    printf("\n");
+    int score;
+    printf("Enter the obtained score:\t");
+    scanf("%d", &score);
+    char *result = is_pass_or_fail(score);
+    printf("%s\n", result);
+
     return 0;
+}
+char* is_pass_or_fail(int score){
+    if(score >= 50)
+        return "Pass";
+    return "Fail";
 }
